@@ -116,28 +116,28 @@ else
 	# but not anymore. Otherwise we had to remove the files from "$CLONE_DIR",
 	# including "." and with the exception of ".git/"
 	mv "$CLONE_DIR/.git" "$TEMP_DIR/.git"
-	
+
 	# $TARGET_DIRECTORY is '' by default
 	ABSOLUTE_TARGET_DIRECTORY="$CLONE_DIR/$TARGET_DIRECTORY/"
-	
+
 	echo "[+] Deleting $ABSOLUTE_TARGET_DIRECTORY"
 	rm -rf "$ABSOLUTE_TARGET_DIRECTORY"
-	
+
 	echo "[+] Creating (now empty) $ABSOLUTE_TARGET_DIRECTORY"
 	mkdir -p "$ABSOLUTE_TARGET_DIRECTORY"
-	
+
 	echo "[+] Listing Current Directory Location"
 	ls -al
-	
+
 	echo "[+] Listing root Location"
 	ls -al /
-	
+
 	mv "$TEMP_DIR/.git" "$CLONE_DIR/.git"
 	echo "[+] Copying contents of source repository folder $SOURCE_DIRECTORY to folder $TARGET_DIRECTORY in git repo $DESTINATION_REPOSITORY_NAME"
         cp -ra "$SOURCE_DIRECTORY"/. "$CLONE_DIR/$TARGET_DIRECTORY"
 fi
 
-cd "$CLONE_DIR/$TARGET_DIRECTORY"
+cd "$CLONE_DIR"
 
 echo "[+] Files that will be pushed"
 ls -la
