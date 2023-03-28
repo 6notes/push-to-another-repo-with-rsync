@@ -49,7 +49,7 @@ inputs:
     default: ''
     required: false
   rsync:
-    description: '[Optional] Rsync command to use instead of copying the folder'
+    description: '[Optional] Rsync command to use from source-directory to target directory instead of copying'
     default: ''
     required: false
         
