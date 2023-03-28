@@ -130,6 +130,7 @@ then
       echo "rsync could not be found, please install rsync"
       exit 1
 	fi
+	echo "$TARGET_DIRECTORY"
 	$RSYNC "$SOURCE_DIRECTORY" "$CLONE_DIR/$TARGET_DIRECTORY"
 	echo "rsync command complete"
 else
