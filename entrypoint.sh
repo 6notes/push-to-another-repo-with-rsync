@@ -127,6 +127,8 @@ then
 	echo "[+] Using RSYNC command"
 	echo "installing rsync"
 	sudo apt-get install rsync && echo "rsync installed"
+	rsync --version
+	echo rsync --version
 	echo "trying rsync command"
 	if ! command -v rsync --version &> /dev/null
     then
