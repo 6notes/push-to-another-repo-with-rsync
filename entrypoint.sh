@@ -129,7 +129,7 @@ then
         then
     		echo "rsync could not be found, please install rsync"
                 exit
-	$RSYNC
+	$RSYNC '$SOURCE_DIRECTORY' '$CLONE_DIR/$TARGET_DIRECTORY'
 fi
 else
 	echo "[+] Copying contents of source repository folder $SOURCE_DIRECTORY to folder $TARGET_DIRECTORY in git repo $DESTINATION_REPOSITORY_NAME"
