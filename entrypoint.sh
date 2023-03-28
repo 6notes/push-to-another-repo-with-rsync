@@ -125,17 +125,13 @@ fi
 if [[ "$RSYNC" =~ ^rsync.* ]]
 then
 	echo "[+] Using RSYNC command"
-	echo "installing rsync"
-	sudo apt-get install rsync && echo "rsync installed"
-	rsync --version
-	echo rsync --version
-	echo "trying rsync command"
 	if ! command -v rsync --version &> /dev/null
     then
       echo "rsync could not be found, please install rsync"
       exit 1
 	fi
 	$RSYNC "$SOURCE_DIRECTORY" "$CLONE_DIR/$TARGET_DIRECTORY"
+	echo "rsync command complete"
 else
 	echo "[+] Copying contents of source repository folder $SOURCE_DIRECTORY to folder $TARGET_DIRECTORY in git repo $DESTINATION_REPOSITORY_NAME"
         cp -ra "$SOURCE_DIRECTORY"/. "$CLONE_DIR/$TARGET_DIRECTORY"
