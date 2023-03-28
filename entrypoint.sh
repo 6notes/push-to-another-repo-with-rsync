@@ -121,8 +121,8 @@ then
 	echo "actions/checkout@v2. See: https://github.com/cpina/push-to-another-repository-example/blob/main/.github/workflows/ci.yml#L16"
 	exit 1
 fi
-echo -z "$RSYNC"
-if [ "$RSYNC" =~ ^rsync.* ]
+
+if [[ "$RSYNC" == ^rsync.* ]]
 then
 	echo "[+] Using RSYNC command"
 	if ! command -v rsync --version &> /dev/null
