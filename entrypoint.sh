@@ -125,6 +125,7 @@ fi
 if [[ "$RSYNC" =~ ^rsync.* ]]
 then
 	echo "[+] Using RSYNC command"
+	rsync --version
 	if ! command -v rsync --version &> /dev/null
     then
       echo "rsync could not be found, please install rsync"
