@@ -137,7 +137,7 @@ else
         cp -ra "$SOURCE_DIRECTORY"/. "$CLONE_DIR/$TARGET_DIRECTORY"
 fi
 
-cd "$CLONE_DIR"
+cd "$CLONE_DIR/$TARGET_DIRECTORY"
 
 echo "[+] Files that will be pushed"
 ls -la
