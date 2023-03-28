@@ -124,7 +124,7 @@ fi
 
 if [[ "$RSYNC" =~ ^rsync.* ]]
 then
-	echo "[+] Using RSYNC command"
+	echo "[+] Using RSYNC command from $SOURCE_DIRECTORY to $CLONE_DIR/$TARGET_DIRECTORY"
 	if ! command -v rsync --version &> /dev/null
     then
       echo "rsync could not be found, please install rsync"
