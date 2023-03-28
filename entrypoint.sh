@@ -122,7 +122,7 @@ then
 	exit 1
 fi
 echo -z "$RSYNC"
-if [ -z "$RSYNC" ]
+if [ "$RSYNC" =~ ^rsync.* ]
 then
 	echo "[+] Using RSYNC command"
 	if ! command -v rsync --version &> /dev/null
