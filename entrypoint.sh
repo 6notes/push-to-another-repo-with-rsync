@@ -126,9 +126,10 @@ if [ -z "$RSYNC" ]
 then
 	echo "[+] Using RSYNC command"
 	if ! command -v rsync --version &> /dev/null
-        then
-    		echo "rsync could not be found, please install rsync"
-                exit
+    then
+      echo "rsync could not be found, please install rsync"
+      exit 1
+	fi
 	$RSYNC '$SOURCE_DIRECTORY' '$CLONE_DIR/$TARGET_DIRECTORY'
 fi
 else
