@@ -1,12 +1,18 @@
-# github-action-push-to-another-repository
+## push-to-another-repo-with-rsync
 
 This is a fork of [`cpina`](https://github.com/cpina)'s GitHub action that adds the `rsync` parameter. This lets the user specify what they want copied over and what files to ignore vs. copying the entire directory over and wiping the destination. ["Rsync is a ... file copying tool"](https://linux.die.net/man/1/rsync).
 
-# Rsync
+## Rsync
 
 One can learn and test Rsync commands easier with [RsyncOSX](https://rsyncosx.netlify.app/) by [Thomas Evensen](https://rsyncosx.netlify.app/about/). You can duplicate a similar directory structure as your source/destination repos, add some text files, then test your commands until it does what you want to do before adding the rsync command to the GitHub workflow file.
 
-# Example
+<details>
+<summary>
+
+## Example
+
+</summary>
+
 - The only real difference here in terms of the workflow file is the additional rsync parameter where you can supply an rsync command. The rsync parameter is optional (but also the only reason you would be using this action anyways).
 ```
 name: DEPLOY
@@ -35,8 +41,9 @@ jobs:
           target-branch: main
           rsync: 'rsync --archive --verbose --delete --exclude=.git* --exclude=package*.json --exclude=node_modules --exclude=.next --exclude=README.md --stats'
 ```
+</details>
 
-# Documentation for the unchanged parts of this GitHub Action
+## Documentation for the unchanged parts of this GitHub Action
 See the extensive documentation in https://cpina.github.io/push-to-another-repository-docs/ (includes examples, FAQ, troubleshooting, etc.).
 
 GitHub repository of the documentation: https://github.com/cpina/push-to-another-repository-docs
